@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Buddy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-section {
+            margin-bottom: 20px;
+        }
+
+        .input-section label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input-section select,
+        .input-section input[type="number"],
+        .input-section input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .input-section button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .input-section button:hover {
+            background-color: #0056b3;
+        }
+
+        .expenses-list table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .expenses-list th,
+        .expenses-list td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .expenses-list th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .expenses-list tfoot td {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Budget Buddy</h1>
+        </header>
+        <div class="input-section">
+            <label for="category-select">Category:</label>
+            <select id="category-select">
+                <option value="College Fee">College Fee</option>
+                <option value="Rent">Rent</option>
+                <option value="Transport">Transport</option>
+                <option value="Food">Food</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Cool Drinks">Cool Drinks</option>
+            </select>
+            <label for="amount-input">Amount:</label>
+            <input type="number" id="amount-input">
+            <label for="date-input">Date:</label>
+            <input type="date" id="date-input">
+            <button id="add-btn">Add</button>
+        </div>
+        <div class="expenses-list">
+            <h2>Expenses List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-table-body">
+
+                </tbody>
+                <tfoot>
+                    <td>Total:</td>
+                    <td id="total-amount"></td>
+                    <td></td>
+                    <td></td>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
